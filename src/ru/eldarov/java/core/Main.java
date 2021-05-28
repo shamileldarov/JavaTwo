@@ -1,68 +1,36 @@
 package ru.eldarov.java.core;
 
-
-import java.util.ArrayList;
-
-
-import java.util.ArrayList;
-
 public class Main {
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
 
-        Box<Apple>> appleBox = new Box<>(apples);
-        Box<Orange>> orangeBox = new Box<>(oranges);
-        Box<Apple> appleBoxOne = new Box<>(applesOne);
-
-        Integer[] test = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
-        ArrayList<Apple>> apples = new ArrayList<>();
-        apples.add(new Apple());
-        apples.add(new Apple());
-        ArrayList<Apple>> applesOne = new ArrayList<>();
-        applesOne.add(new Apple());
-        applesOne.add(new Apple());
-        applesOne.add(new Apple());
-        ArrayList<Orange>> oranges = new ArrayList<>();
-        oranges.add(new Orange());
-        oranges.add(new Orange());
-
-
-
-        System.out.println("\n---AppleboxOne After---");
-        appleBoxOne.fruitBox.forEach(System.out::println);
-        System.out.println("\n---Applebox After---");
-        appleBox.fruitBox.forEach(System.out::println);
-        System.out.println("\n--------");
-        System.out.println("\n--Applebox Before--");
-        appleBox.fruitBox.forEach(System.out::println);
-        System.out.println("\n--AppleboxOne Before--");
-        appleBoxOne.fruitBox.forEach(System.out::println);
-        appleBox.pourBox(appleBoxOne);
-
-
-
-        appleBox.put(new Apple());
-        orangeBox.put(new Orange());
-        System.out.println(appleBox.getWeight());
-        System.out.println(orangeBox.getWeight());
-        System.out.println("\n--");
-
-
-        System.out.println(appleBox.compareTo(orangeBox));
-        System.out.println("\n---");
-
-
-
-        Swap swapTest = new Swap();
-        printArray(test);
-        swapTest.swapElements(test, 0, 9);
-        System.out.println("");
-        printArray(test);
     }
+    public static void main(String[] args) {
+        String[] arrayWords = {"карандаш", "ручка", "москва", "трактор", "карандаш", "москва",
+                "птица", "карандаш", "москва", "карандащ", "трактор", "москва", "agony", "руль"};
+        Words words = new Words();
+        words.returnUnique(arrayWords);
 
-    private static void printArray(Integer[] test) {
-        for (int elem : test) {
-            System.out.print(elem);
-        }
+        words.count(arrayWords);
+        System.out.println("*********************");
+
+        PhoneDirectory phoneDirectory = new PhoneDirectory();
+
+
+
+        phoneDirectory.add("Иванов", "+1111");
+        phoneDirectory.add("Иванов", "+2222");
+        phoneDirectory.add("Сидоров", "+3333");
+        phoneDirectory.add("Коэн", "+4444");
+        phoneDirectory.add("Коэн", "+5555");
+        phoneDirectory.add("Карандашов", "+6666");
+        phoneDirectory.add("Карандашов", "+7777");
+        phoneDirectory.add("Сидороа", "+8888");
+        phoneDirectory.add("Молотоа", "+9999");
+
+        System.out.println(phoneDirectory.getDirectory());
+        phoneDirectory.get("Коэн");
+        phoneDirectory.get("Сидоров");
+        phoneDirectory.get("Молотов");
     }
 }
